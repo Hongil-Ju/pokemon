@@ -1,0 +1,12 @@
+spring:
+# mariaDB 접속에 필요한 정보
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: admin
+    password: hong1234
+    url: jdbc:mariadb://hongil-1-mariadb.cpwpamfbyhe8.ap-northeast-2.rds.amazonaws.com:3306/pokemon?characterEncoding=utf-8&serverTimezone=Asia/Seoul
+
+# mybatis 설정 파일 위치 설정
+mybatis:
+  mapper-locations: classpath:database/mappers/*Mapper.xml
+  config-location: classpath:database/config/config.xml

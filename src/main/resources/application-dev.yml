@@ -1,0 +1,47 @@
+spring:
+    
+# view 파일(jsp) 관련 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    log-request-details: 'true'
+    converters:
+      preferred-json-mapper: gson
+# multipart(file) 관련 설정
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      
+# log 관련 설정
+log4jdbc:
+  dump:
+    sql:
+      maxlinelength: '0'
+  spylogdelegator:
+    name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+​logging:
+  level:
+    jdbc:
+      audit: 'OFF             '
+      connection: 'OFF       '
+      resultset: 'OFF      '
+      resultsettable: 'INFO  '
+      sqlonly: 'OFF           '
+      nodeValue: 'OFF'
+      sqltiming: 'DEBUG      '
+    root: info
+    org:
+      springframework:
+        web: info
+    com:
+      zaxxer:
+        hikari: 'OFF'
+    javax:
+      sql:
+        DataSource: INFO
+        
+# server 관련 설정
+server:
+  port: '82'
